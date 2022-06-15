@@ -13,5 +13,7 @@ jobs:
           java-version: '11'
           distribution: 'temurin'
           cache: maven
+      - name: Copy Settings
+        run: cp settings.xml ~/.m2/settings.xml
       - name: Run Validation tests - Validate -> Test-Local -> Set-Compatibility -> Test-Compatibility
         run: mvn validate

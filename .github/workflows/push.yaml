@@ -13,5 +13,7 @@ jobs:
           java-version: '11'
           distribution: 'temurin'
           cache: maven
+      - name: Copy Settings
+        run: cp settings.xml ~/.m2/settings.xml
       - name: Register Schema
         run: mvn io.confluent:kafka-schema-registry-maven-plugin:register@register
