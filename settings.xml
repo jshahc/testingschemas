@@ -1,12 +1,10 @@
-<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
-          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
-                       https://maven.apache.org/xsd/settings-1.0.0.xsd">
-
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd">
     <mirrors>
         <mirror>
             <id>confluent-artifactory-central</id>
-            <mirrorOf>central,confluent,java.net,findify,jcenter,confluent-snapshots</mirrorOf>
+            <mirrorOf>
+                central,confluent,java.net,findify,jcenter,confluent-snapshots
+            </mirrorOf>
             <url>https://confluent.jfrog.io/confluent/maven-public</url>
         </mirror>
     </mirrors>
@@ -14,7 +12,9 @@
         <server>
             <id>confluent-artifactory-central</id>
             <username>jshah@confluent.io</username>
-            <password>AKCp8kqX4jLY8AoYjppDpN2jWugDDX5nxsFqnHFVL2oiyipAMQzwb5hCQftdArLvRgJKjE3nq</password>
+            <password>
+                AKCp8krVNc66aeny3KdzCpPdU4n7v1nDmanGCQv9QHriKXQCjrb45yyjwvZfcK2MSTnfkDopV
+            </password>
         </server>
     </servers>
     <profiles>
