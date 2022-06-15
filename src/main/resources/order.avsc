@@ -1,0 +1,39 @@
+{
+  "connect.name": "ActivityTracker",
+  "fields": [
+    {
+      "name": "ActivityTrackerID",
+      "type": "string"
+    },
+    {
+      "name": "UserID",
+      "type": "string"
+    },
+    {
+      "name": "CurrentLocation",
+      "type": "string"
+    },
+    {
+      "name": "StartLocation",
+      "type": "string"
+    },
+    {
+      "name": "HeartRate",
+      "type": "float"
+    },
+    {
+      "name": "O2Level",
+      "type": "float"
+    },
+    {
+      "name": "ExtraField",
+      "type": "float"
+    },
+    {
+      "name": "ExtraField2",
+      "type": "float"
+    }
+  ],
+  "name": "ActivityTracker",
+  "type": "record"
+}
