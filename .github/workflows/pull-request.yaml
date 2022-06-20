@@ -29,7 +29,7 @@ jobs:
           distribution: 'temurin'
           cache: maven
       - run: cp settings.xml ~/.m2/settings.xml
-      - name: Validate if schema is valid
+      - name: Test schema with locally present schema
         run: mvn schema-registry:test-local-compatibility@test-local
 
   set-compatibility:
@@ -43,7 +43,7 @@ jobs:
           distribution: 'temurin'
           cache: maven
       - run: cp settings.xml ~/.m2/settings.xml
-      - name: Validate if schema is valid
+      - name: Set compatibility of subject
         run: mvn schema-registry:set-compatibility@set-compatibility
 
   test-compatibility:
@@ -57,5 +57,5 @@ jobs:
           distribution: 'temurin'
           cache: maven
       - run: cp settings.xml ~/.m2/settings.xml
-      - name: Validate if schema is valid
+      - name: Test schema with subject
         run: mvn schema-registry:test-compatibility@test-compatibility
