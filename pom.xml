@@ -9,9 +9,11 @@
     <version>1.0</version>
 
     <properties>
-        <schemaRegistryUrl>"Enter URL"</schemaRegistryUrl>
-        <schemaRegistryBasicAuthUserInfo>"Enter Info"</schemaRegistryBasicAuthUserInfo>
-        <confluent.version>7.2.0</confluent.version>
+        <schemaRegistryUrl>https://psrc-grp5n.us-west-2.aws.devel.cpdev.cloud</schemaRegistryUrl>
+        <schemaRegistryBasicAuthUserInfo>
+            WCXHO4XQ6QHNYVAD:7Id9whPUCQL8v09VqxS9/n5s/a1ryDbHnmxzEDzuR2o1FvoSYLXmfL1iklrf0OKk
+        </schemaRegistryBasicAuthUserInfo>
+        <confluent.version>7.2.0-1006</confluent.version>
     </properties>
 
     <build>
@@ -41,7 +43,6 @@
                             </subjects>
                             <schemaTypes>
                                 <Flights-value>PROTOBUF</Flights-value>
-                                // Used in validating Schema
                             </schemaTypes>
 
                         </configuration>

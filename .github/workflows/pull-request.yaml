@@ -2,16 +2,56 @@ name: Testing branch for compatibility before merging
 on:
   pull_request:
     branches: [ master ]
+    paths: [src/*]
 jobs:
-  build:
+
+  validate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Set up JDK 11
-        uses: actions/setup-java@v2
+      - uses: actions/setup-java@v2
         with:
           java-version: '11'
           distribution: 'temurin'
           cache: maven
-      - name: Run Validation tests - Validate -> Test-Local -> Set-Compatibility -> Test-Compatibility
-        run: mvn validate
+      - name: Validate if schema is valid
+        run: mvn schema-registry:validate@validate
+
+  test-local-compatibility:
+    needs: validate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-java@v2
+        with:
+          java-version: '11'
+          distribution: 'temurin'
+          cache: maven
+      - name: Validate if schema is valid
+        run: mvn schema-registry:test-local-compatibility@test-local
+
+  set-compatibility:
+    needs: test-local-compatibility
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-java@v2
+        with:
+          java-version: '11'
+          distribution: 'temurin'
+          cache: maven
+      - name: Validate if schema is valid
+        run: mvn schema-registry:set-compatibility@set-compatibility
+
+  test-compatibility:
+    needs: set-compatibility
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-java@v2
+        with:
+          java-version: '11'
+          distribution: 'temurin'
+          cache: maven
+      - name: Validate if schema is valid
+        run: mvn schema-registry:test-compatibility@test-compatibility
