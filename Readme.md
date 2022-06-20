@@ -9,7 +9,8 @@ For this project we are going to use GitHub workflows to run actions triggered b
    compatibility with subject when a Pull Request is created to merge a new schema to
    master.            
    ```Validate -> Test-Local -> Set-Compatibility -> Test-Compatibility```
-2. Register schema when a Pull Request is approved and merged to master.   
+   <img src="src/test/resources/github-actions-flow.png"></img>
+3. Register schema when a Pull Request is approved and merged to master.   
    ``` register ```
 
 ## Steps to manage schemas from development to deployment on the Confluent Schema Registry:
