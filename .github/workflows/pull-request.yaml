@@ -2,7 +2,7 @@ name: Testing branch for compatibility before merging
 on:
   pull_request:
     branches: [ master ]
-    paths: [src/main/resources*]
+    paths: [src/main/resources/*]
 jobs:
 
   validate:
