@@ -2,6 +2,7 @@ name: Registering Schema on merge of pull request
 on:
   push:
     branches: [ master ]
+    paths: [ src/* ]
 jobs:
   build:
     runs-on: ubuntu-latest
