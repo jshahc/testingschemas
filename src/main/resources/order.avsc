@@ -38,6 +38,10 @@
       "type": "float"
     },
     {
+      "name": "ExtraField34",
+      "type": "float"
+    },
+    {
       "name": "ExtraField35",
       "type": "float"
     }
