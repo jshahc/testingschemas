@@ -2,9 +2,9 @@ name: Registering Schema on merge of pull request
 on:
   push:
     branches: [ master ]
-    paths: [ src/* ]
+    paths: [src/main/resources/*]
 jobs:
-  build:
+  register-schema:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2

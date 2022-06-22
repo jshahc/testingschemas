@@ -2,7 +2,7 @@ name: Testing branch for compatibility before merging
 on:
   pull_request:
     branches: [ master ]
-    paths: [src/*]
+    paths: [src/main/resources/*]
 jobs:
 
   validate:
@@ -14,8 +14,7 @@ jobs:
           java-version: '11'
           distribution: 'temurin'
           cache: maven
-      - name: Copy Settings
-        run: cp settings.xml ~/.m2/settings.xml
+      - run: cp settings.xml ~/.m2/settings.xml
       - name: Validate if schema is valid
         run: mvn schema-registry:validate@validate
 
@@ -29,7 +28,8 @@ jobs:
           java-version: '11'
           distribution: 'temurin'
           cache: maven
-      - name: Validate if schema is valid
+      - run: cp settings.xml ~/.m2/settings.xml
+      - name: Test schema with locally present schema
         run: mvn schema-registry:test-local-compatibility@test-local
 
   set-compatibility:
@@ -42,7 +42,8 @@ jobs:
           java-version: '11'
           distribution: 'temurin'
           cache: maven
-      - name: Validate if schema is valid
+      - run: cp settings.xml ~/.m2/settings.xml
+      - name: Set compatibility of subject
         run: mvn schema-registry:set-compatibility@set-compatibility
 
   test-compatibility:
@@ -55,5 +56,6 @@ jobs:
           java-version: '11'
           distribution: 'temurin'
           cache: maven
-      - name: Validate if schema is valid
+      - run: cp settings.xml ~/.m2/settings.xml
+      - name: Test schema with subject
         run: mvn schema-registry:test-compatibility@test-compatibility

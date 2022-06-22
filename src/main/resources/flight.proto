@@ -20,4 +20,5 @@ message Flight {
   string squawk = 13; // The transponder code aka Squawk. Can be null.
   bool spi = 14; // Whether flight status indicates special purpose indicator.
   bool spi3 = 15; // Whether flight status indicates special purpose indicator.
+  bool spi34 = 25;  // Whether flight status indicates special purpose indicator.
 }

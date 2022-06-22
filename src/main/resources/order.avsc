@@ -36,6 +36,10 @@
     {
       "name": "ExtraField3",
       "type": "float"
+    },
+    {
+      "name": "ExtraField34",
+      "type": "float"
     }
   ],
   "name": "ActivityTracker",
